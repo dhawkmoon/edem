@@ -1,0 +1,18 @@
+.minicart {
+	.inner {
+		position: relative;
+	}
+	&__price {
+		color: $brand-primary;
+	}
+	&__cta {
+		position: absolute;
+    width: 150px;
+    left: 0;
+		text-decoration: none !important;
+		font-weight: bold;
+		&:hover span {
+			border-bottom: 1px dotted #ccc;
+		}
+	}
+}

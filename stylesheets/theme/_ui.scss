@@ -1,0 +1,90 @@
+.expandable {
+	position: relative;
+	&::after {
+		content: ''; background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMCIgeT0iMCIgd2lkdGg9IjIyLjgyOCIgaGVpZ2h0PSIxMS4wNDciIHZpZXdCb3g9IjAsIDAsIDIyLjgyOCwgMTEuMDQ3Ij4NCiAgPGcgaWQ9IkxheWVyXzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNjYsIC0yNzQuNjg4KSI+DQogICAgPHBhdGggZD0iTTM3OC41NjIsMjg1LjE4OCBMMzY3LjUsMjc2LjE4OCIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMSIvPg0KICAgIDxwYXRoIGQ9Ik0zNzcuOTUzLDI4NS4yMzQgTDM4OC4zMjgsMjc2LjI5NyIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMSIvPg0KICA8L2c+DQo8L3N2Zz4NCg==');
+		background-size: cover;
+		display: inline-block;
+    width: 13px;
+    height: 6px;
+    position: relative;
+    top: -2px;
+		@include transition;
+		-webkit-transform-origin: center;
+		        transform-origin: center;
+
+	}
+	&__list {
+		display: none;
+		position: absolute;
+		left: 0;
+		padding-left: 20px;
+		li {
+			display: block !important;
+			padding: 10px 20px;
+			text-align: left;
+			background-color: $brand-lighter;
+			color: $brand-primary;
+			font-weight: bold;
+			cursor: pointer;
+			&:hover {
+				background-color: $brand-primary;
+				color:white;
+			}
+		}
+	}
+	&:hover {
+		&::after {
+				-webkit-transform: rotate(180deg);
+								transform: rotate(180deg);
+		}
+		.expandable__list {
+			display: block;
+		}
+	}
+}
+/** [LINKS WITH ARROWS AFTER] **/
+.link--arrowed {
+	&::after {
+		content: '';
+		display: inline-block;
+		background-image: url(../../icons/arrow.svg);
+		background-size: cover;
+		width: 15px;
+		height: 10px;
+		margin-left: 10px;
+		@include transition(.2s);
+	}
+	&:hover {
+		&::after {
+			-webkit-transform: translateX(5px);
+			        transform: translateX(5px);
+		}
+	}
+}
+/** [FEATURED (LIKE) BUTTONS] **/
+[data-toggle="featured"] {
+	width: 30px;
+	height: 28px;
+	cursor:pointer;
+	display: block;
+	background-size: cover;
+	background-image: url('../icons/izbran-o.svg');
+	&:hover,
+	&.checked {
+		background-image:url('../icons/izbran.svg');
+	}
+	&::before {
+		content: '';
+		display: block;
+		width: inherit;
+		height: inherit;
+		background-size: cover;
+	}
+	&.checked::before {
+		background-image: url('../icons/izbran.svg');
+		-webkit-animation: featuredClick .4s linear;
+		        animation: featuredClick .4s linear;
+	}
+}
+
+/** [TAGS && HASGTAGS] **/

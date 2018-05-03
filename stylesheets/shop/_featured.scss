@@ -1,0 +1,30 @@
+.featured {
+	padding-top: 15px;
+	&-item {
+		[data-toggle="featured"] {
+			position: absolute;
+	    right: 0;
+	    top: 0;
+	    margin: 20px;
+	    z-index: 3;
+		}
+		&__images {
+			display: block;
+			position: relative;
+			overflow: hidden;
+		}
+		&__top-image {
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			@include transition;
+			opacity: 0;
+		}
+		&__images:hover &__top-image {
+			opacity: 1;
+		}
+	}
+}

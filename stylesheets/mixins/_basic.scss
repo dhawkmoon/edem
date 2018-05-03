@@ -1,0 +1,5 @@
+//basic mixins
+
+@mixin transition ( $t: .1s, $f: linear ) {
+	transition: $t $f;
+}

@@ -1,0 +1,17 @@
+//core
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'mixins/_basic.scss';
+@import 'theme/_ui.scss';
+@import 'theme/_icons.css';
+@import 'theme/_fonts.scss';
+@import 'theme/_typo.scss';
+@import 'theme/_animations.scss';
+@import 'theme/_header.scss';
+@import 'shop/_minicart.scss';
+@import 'theme/_sections.scss';
+@import 'shop/_featured.scss';
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+}

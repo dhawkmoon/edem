@@ -1,0 +1,101 @@
+.header {
+	padding: 30px 0;
+	border-bottom: 1px dashed #eaeaea;
+
+	&-nav-top {
+	  li {
+			display: inline-block;
+		}
+		&__item {
+			margin-left: 40px;
+			text-decoration: none !important;
+			cursor: pointer;
+			@include transition;
+			&:not(.minicart):not(.location):hover {
+				color: $brand-primary;
+			}
+			&::before {
+				position: relative;
+				margin-right: 2px;
+				top: 5px;
+			}
+		}
+		.phone::before {
+			content: url(/icons/phone.svg);
+		}
+		.login {
+			&::before {
+				content: url(/icons/lk.svg);
+			}
+		}
+		.minicart::before {
+			content: url(/icons/buy.svg);
+		}
+		.location {
+			span {
+				border-bottom: 1px dotted #ccc;
+			}
+			&:hover span{
+				border-bottom-color: transparent;
+			}
+			&::before {
+				content: url(/icons/city.svg);
+			}
+		}
+	}
+
+
+
+	&-nav-bottom {
+		padding-top: 30px;
+		ul {
+			margin-bottom: 0;
+		}
+		li {
+			display: inline-block;
+		}
+		i {
+			display: block;
+			text-align: center;
+			color: #ccc;
+			font-size: 38px;
+			@include transition;
+			&.icon-photostudia,
+			&.icon-about {
+				font-size: 24px;
+				padding-bottom: 5px;
+			}
+			&::before {
+				@include transition(.2s);
+			}
+		}
+		a {
+			display: block;
+			font-size: 	18px;
+			font-weight: 300;
+			text-decoration: none !important;
+			text-align: center;
+
+			span {
+				display: block;
+				padding: 2px 15px 4px;
+				margin-top: 2px;
+				@include transition(.2s);
+			}
+			@include transition;
+			&:hover {
+				color: $brand-primary;
+				span {
+					background-color: $brand-lighter;
+					border-radius: 15px;
+				}
+				i {
+					color: $brand-primary;
+
+				}
+			}
+
+		}
+	}
+
+}

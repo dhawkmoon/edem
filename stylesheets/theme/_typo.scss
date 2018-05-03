@@ -1,0 +1,45 @@
+h1,
+h2,
+{
+	color: $brand-primary;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+h3 {
+	color: black;
+}
+
+.ico-h {
+	&::before {
+		content: '';
+		display: inline-block;
+		position: relative;
+		top: 7px;
+		margin-right: 15px;
+		width: 30px;
+		height: 30px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&-box {
+		&::before {
+			background-image: url('../icons/prazdniku.svg');
+		}
+	}
+
+	&-promo {
+		&::before {
+			background-image: url('../icons/akcii.svg');
+		}
+	}
+
+	&-featured {
+		&::before {
+			background-image: url('../icons/izbran-gray.svg');
+		}
+	}
+}
